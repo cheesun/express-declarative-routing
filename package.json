@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "coffee-script": "~1.7.1",
-    "express": "~3.5.0"
+    "express": "~3.5.0",
+    "easy-bake": "0.1.9"
   }
 }
