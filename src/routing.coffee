@@ -1,42 +1,3 @@
-# a declarative routing system
-#
-# 1. routes are declared as nested objects, leaf values point to controller methods
-# - object properties are route element names
-# - '_middlware' can be used to declare what middleware is available to subroutes definitions
-# - '_middlewareName1_middlewareName2' can be used to declare that subroutes are using the middleware
-# - '$' in routes will be replaced with ':', which signifies a wildcard in express routing
-#
-# 2. run build routes
-# - this builds middleware in front of certain routes as required
-# - creates a list of functions which will build the routes later
-#
-# Example:
-#
-# # require the controller
-# controller = require(./controller)
-#
-# # declare routes
-# routes =
-#   route_a:
-#     subroute_b:
-#       _middleware: [ middlware 1 ] # middleware shared  by all routes in subroute_b
-#       get: controller.getAB
-#       put: controller.putAB
-#     subroute_c:
-#       post: controller.getAC
-#     _groupName:
-#       _middleware: [ middleware1, middleware2 ] # middleware shared by all routes in groupName
-#       subroute_d:
-#         get: controller.getAD
-#       subroute_e:
-#         get: controller.getAE
-#         post: controller.postAE
-#   route_b:
-#     all: controller.getB
-#
-# # build routes
-# buildRoutes(app, routes)
-
 utils = require('./utils')
 deepExtend = utils.deepExtend
 ensureArray = utils.ensureArray
@@ -55,7 +16,6 @@ actions = [
 # and returns functions which are used to create the routes later
 # this allows middleware to be created before routes
 # therefore we should only call buildRoutes once
-
 
 createBuilder = (app, action, route, endpoint, groups=[]) ->
   return () ->

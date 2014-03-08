@@ -26,6 +26,11 @@
   },
   "devDependencies": {
     "coffee-script": "~1.7.1",
-    "express": "~3.5.0"
+    "express": "~3.5.0",
+    "grunt-contrib-coffee": "~0.7.0",
+    "grunt-coffeelint": "0.0.7",
+    "grunt-cli": "~0.1.11",
+    "grunt": "~0.4.1",
+    "grunt-contrib-watch": "~0.5.3"
   }
 }
