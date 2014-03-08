@@ -1,0 +1,31 @@
+{
+  "name": "express-declarative-routing",
+  "version": "0.0.0",
+  "description": "Declarative Routing for Express.js",
+  "main": "lib/routing.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "coffee tests/test.coffee"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cheesun/express-declarative-routing.git"
+  },
+  "keywords": [
+    "express",
+    "declarative",
+    "routing",
+    "routes"
+  ],
+  "author": "Cheesun Choong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cheesun/express-declarative-routing/issues"
+  },
+  "devDependencies": {
+    "coffee-script": "~1.7.1",
+    "express": "~3.5.0"
+  }
+}
