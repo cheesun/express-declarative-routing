@@ -6,7 +6,10 @@ declarative routing for express.js
 
 ## we need your help!
 
-I would like to turn this module
+A few things on the roadmap:
+
+- full testing
+- cover all features of express.js routing
 
 
 ## getting started
