@@ -3,6 +3,10 @@ express-declarative-routing
 
 declarative routing for express.js
 
+## NPM Package
+
+npm install express-declarative-routing
+
 
 ## we need your help!
 
