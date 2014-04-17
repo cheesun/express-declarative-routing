@@ -1,6 +1,6 @@
 {
   "name": "express-declarative-routing",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Declarative Routing for Express.js",
   "main": "lib/routing.js",
   "directories": {
