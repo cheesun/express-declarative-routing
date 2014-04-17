@@ -22,10 +22,24 @@ createBuilder = (app, action, route, endpoint, groups=[]) ->
     console.log('| ' + action.toUpperCase() + ' | ' + route + ' | ' + groups.join(', ') + ' |  |')
     app[action](route, endpoint) if endpoint
 
-createMiddleware = (app, name, route, middleware) ->
-  console.log('adding ' + name + ' middleware for ' + route)
+wrapMethodSpecific = (methods, middleware) ->
+  return (req, res, next) ->
+    if req.method.toLowerCase() in ensureArray(methods)
+      middleware(req, res, next)
+    else
+      next()
+
+createMiddleware = (app, name, route, middleware, action=null) ->
+  if action
+    actionText = "#{action.toUpperCase()} "
+  else
+    actionText = ''
+  console.log('adding ' + name + ' middleware for ' + actionText + route)
   for m in ensureArray(middleware)
-    app.use(route, m)
+    if action
+      app.use(route, wrapMethodSpecific(action, m))
+    else
+      app.use(route, m)
 
 prepareRoutes = (app, baseRoute, routeObject, groups=[]) ->
   # collect the routes
