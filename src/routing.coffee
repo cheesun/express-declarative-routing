@@ -47,7 +47,7 @@ prepareRoutes = (app, baseRoute, routeObject, groups=[]) ->
   if routeObject
     for key, value of routeObject when key != '_middleware'
       if key in actions # it's a leaf node of the routes
-        createMiddleware(app, groups[groups.length - 1], baseRoute, routeObject._middleware) if routeObject._middleware?
+        createMiddleware(app, groups[groups.length - 1], baseRoute, routeObject._middleware, key) if routeObject._middleware?
         for endpoint in ensureArray(value)
           toDo.push(createBuilder(app, key, baseRoute, endpoint, groups))
       else
